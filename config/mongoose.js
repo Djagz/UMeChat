@@ -1,0 +1,16 @@
+var mongoose = require('mongoose');
+var fs = require('fs');
+var path = require('path');
+
+mongoose.connect('mongodb://localhost:27017/twilioData_v3'); //First MVC version
+
+var models_path = path.join(__dirname, '../models');
+
+fs.readdirSync(models_path).forEach(function(file){
+	if(file.indexOf('.js') >= 0){
+		require(path.join(models_path, file))
+	}
+})
+
+// require('../models/userModel');
+// require('../models/otpModel');

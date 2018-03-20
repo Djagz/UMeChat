@@ -1,0 +1,18 @@
+{
+  "name": "twilioapp",
+  "version": "1.0.0",
+  "description": "Twilio App that sends message to any phone number",
+  "main": "\u001b[D\u001b[C\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001bserver.js)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dipesh Jagwani",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.6",
+    "mongoose-relationships": "^0.4.0",
+    "twilio": "^3.11.3"
+  }
+}
