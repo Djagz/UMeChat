@@ -30,8 +30,8 @@ module.exports = {
 			        		return;
     					}
     					client.messages.create({
-							to: '+15105569436',
-							from: '+15005550006',
+							to: '+15*****36',
+							from: '+15******06',
 							body: 'Your OTP is:' + otp
 						}, function(err, twilioData){
 							if(err)
@@ -53,8 +53,8 @@ module.exports = {
 	        				return;
 	        			}
 	        			client.messages.create({
-							to: '+15105569436',
-							from: '+15005550006',
+							to: '+15******36',
+							from: '+15******06',
 							body: 'Your OTP is:' + otp
 						}, function(err, twilioData){
 							if(err)
@@ -106,8 +106,8 @@ module.exports = {
 
 // app.get('/testTwilio', function(req, res){
 // 	client.messages.create({
-// 		to: '+15105569436',
-// 		from: '+15005550006',
+// 		to: '+15******36',
+// 		from: '+15******06',
 // 		body: 'You have received $25 in your Bank Account as a valued customer. Please find it in your next login'
 // 	}, function(err, data){
 
