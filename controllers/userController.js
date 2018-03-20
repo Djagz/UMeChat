@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var user = mongoose.model('User');
 var otp = mongoose.model('Otp');
-var client = require('twilio')('ACeb9671278489e5ccb5df57806a92b557', '69197fda50b2c4d7a856317debabbae9');
+var client = require('twilio')('ACe*********557', '691*********ae9'); //Please use your own Twilio SId and Token
 
 
 module.exports = {
@@ -83,7 +83,7 @@ module.exports = {
 				}
 				else{
 					res.json({'message': 'Authentication Error'});
-					
+
 				}
 
 			})
