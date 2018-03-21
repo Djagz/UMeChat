@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
 var Post = mongoose.model('Post');
-var User = mongoose.model('User')
-var ObjectID = require('mongodb').ObjectID
+var User = mongoose.model('User');
+var Reply = mongoose.model('Reply');
+var ObjectID = require('mongodb').ObjectID;
 //var otp = mongoose.model('Comment');
 
 module.exports = {
@@ -82,8 +83,15 @@ module.exports = {
 				res.json(err);
 				return; 
 			}
-
-			res.json(data);
+            Post.populate(data, {path: 'comment_id.reply_id', model: 'Reply' }, function(err, populateData){
+            	if(err){
+				res.json(err);
+				return; 
+				}
+				console.log(populateData);
+				res.json(populateData);
+            })
+			
 		})
 
 

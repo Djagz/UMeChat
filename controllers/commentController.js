@@ -39,7 +39,7 @@ module.exports = {
 		})
 	},
 
-	createReply: function(req, res){
+	/*createReply: function(req, res){
 		Comment.find({'_id': req.headers.id }, function(err, replyData){
 	        if(err){
 				res.json(err);
@@ -65,7 +65,7 @@ module.exports = {
 				})
 			})
 		})
-	},
+	},*/
 
 
 createObject: function(req, res){
