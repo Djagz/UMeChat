@@ -14,5 +14,8 @@
     "mongoose": "^5.0.6",
     "mongoose-relationships": "^0.4.0",
     "twilio": "^3.11.3"
+  },
+  "devDependencies": {
+    "@angular/cli": "^1.7.3"
   }
 }

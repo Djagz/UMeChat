@@ -1,0 +1,35 @@
+<p>
+  login works!
+</p>
+
+
+<body>
+
+	<form *ngIf = (formSelector) (submit)="sendContact()">
+	  Country_Code: <input type="text" name="country_code" 
+	  [(ngModel)]="fullContact.countryCode">	
+      Contact: <input type="number" name="contact" 
+      [(ngModel)]="fullContact.my_contact"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+
+<div *ngIf = (!formSelector)>
+    <form (submit)="verify_OTP()">
+      <br>
+      <br>
+      OTP: <input type="number" name="otp"
+      [(ngModel)]="_otp">
+      <br>
+      <br>
+      {{_otp}}
+      <br>
+      <br>
+      <input type="submit" value="Verify OTP">
+	</form>
+
+	<br>
+	<button (click)="resendOTP()" >Resend OTP</button>
+</div>
+
+
+</body>

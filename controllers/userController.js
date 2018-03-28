@@ -15,8 +15,8 @@ module.exports = {
 		           Do: Store and send OTP
 
 	        */
-
-	        user.findOne({'contact': req.headers.contact}, function(err, userData){
+	        console.log("I am in the sendOTP", req.body);
+	        user.findOne({'contact': req.body.my_contact}, function(err, userData){
 	        	if(err){
 	        		res.json(err);
 	        		return;
@@ -43,8 +43,8 @@ module.exports = {
 	        	}
 	        	else{
 				    let newUser = new user({
-				    	'country_code': req.headers.country_code,
-				    	'contact': req.headers.contact,
+				    	'country_code': req.body.countryCode,
+				    	'contact': req.body.my_contact,
 				    	'otp': otp
 				    });
 	        		newUser.save(function(err, data){
@@ -72,25 +72,28 @@ module.exports = {
 			   output: verify 
 			*/
 
-			user.findOne({'otp': req.headers.otp, 'contact': req.headers.contact}, function(err, otpData){
+			user.findOne({'otp': req.body._otp, 'contact': req.body.contact}, function(err, otpData){
 				if(err){
 					res.json(err);
 					return
 				}
 				if(otpData){
-						res.json({'message': 'User Verified'});
+						res.json({'message': true});
 						return;
 				}
 				else{
-					res.json({'message': 'Authentication Error'});
+					res.json({'message': false});
 
 				}
 
 			})
-		}
+		},
 	
 
 	}
+
+
+
 
 
 

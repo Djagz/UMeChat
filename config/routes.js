@@ -5,7 +5,7 @@ var commentController = require('../controllers/commentController');
 var replyController = require('../controllers/replyController');
 var likesController = require('../controllers/likesController');
 
-// var path = require('path');
+var path = require('path');
 // var fs = require('fs')
 
 // var controllers_path = path.join(__dirname, '../controllers');
@@ -32,6 +32,11 @@ module.exports = function(app) {
 	app.post('/addnewcolumn', commentController.updateNewCommentColomn);
 	app.post('/createReply', replyController.createReply);
 	app.put('/hitLikes', likesController.hitLikes);
+
+
+	app.all("*", (req, res, next) => {
+		res.sendFile(path.resolve("./UMeChat/dist/index.html"))
+	});
 
 
 }
